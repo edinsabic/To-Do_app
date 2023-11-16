@@ -535,3 +535,31 @@ FodyWeavers.xsd
 *.json
 *.props
 *.csproj
+
+# Exclude Visual Studio cache files
+.vs/
+# Exclude build binaries
+bin/
+obj/
+.vs/To-Do_app/v17/.suo
+bin/Debug/net6.0/To-Do_app.dll
+bin/Debug/net6.0/To-Do_app.exe
+bin/Debug/net6.0/To-Do_app.pdb
+obj/Debug/net6.0/apphost.exe
+obj/Debug/net6.0/ref/To-Do_app.dll
+obj/Debug/net6.0/refint/To-Do_app.dll
+obj/Debug/net6.0/staticwebassets.build.json
+obj/Debug/net6.0/To-Do_app.AssemblyInfo.cs
+obj/Debug/net6.0/To-Do_app.AssemblyInfoInputs.cache
+obj/Debug/net6.0/To-Do_app.assets.cache
+obj/Debug/net6.0/To-Do_app.csproj.CoreCompileInputs.cache
+obj/Debug/net6.0/To-Do_app.csproj.FileListAbsolute.txt
+obj/Debug/net6.0/To-Do_app.dll
+obj/Debug/net6.0/To-Do_app.GeneratedMSBuildEditorConfig.editorconfig
+obj/Debug/net6.0/To-Do_app.genruntimeconfig.cache
+obj/Debug/net6.0/To-Do_app.pdb
+obj/Debug/net6.0/To-Do_app.RazorAssemblyInfo.cache
+obj/project.assets.json
+obj/project.nuget.cache
+obj/To-Do_app.csproj.nuget.dgspec.json
+obj/To-Do_app.csproj.nuget.g.props

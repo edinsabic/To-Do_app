@@ -16,7 +16,7 @@ namespace To_Do_app.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    isCompleted = table.Column<bool>(type: "bit", nullable: false)
+                    Completion = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {

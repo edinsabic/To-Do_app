@@ -240,7 +240,7 @@ namespace To_Do_app.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<bool>("isCompleted")
+                    b.Property<bool>("Completion")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");

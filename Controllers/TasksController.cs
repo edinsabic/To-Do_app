@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using NuGet.Protocol;
 using To_Do_app.Data;
 using To_Do_app.Models;
 
@@ -26,6 +27,23 @@ namespace To_Do_app.Controllers
                           View(await _context.Task.ToListAsync()) :
                           Problem("Entity set 'ApplicationDbContext.Task'  is null.");
         }
+
+        // GET: Tasks/ShowSearchForm
+        public async Task<IActionResult> ShowSearchForm()
+        {
+            return _context.Task != null ?
+                        View() :
+                        Problem("Entity set 'ApplicationDbContext.Task'  is null.");
+        }
+
+        // POST: Tasks/ShowSearchResult
+        public async Task<IActionResult> ShowSearchResult(String SearchPhrase)
+        {
+            return _context.Task != null ?
+                        View("Index", await _context.Task.Where( j => j.Title.Contains(SearchPhrase)).ToListAsync()):
+                        Problem("Entity set 'ApplicationDbContext.Task'  is null.");
+        }
+
 
         // GET: Tasks/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -56,7 +74,7 @@ namespace To_Do_app.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,isCompleted")] Models.Task task)
+        public async Task<IActionResult> Create([Bind("Id,Title,Description,Completion")] Models.Task task)
         {
             if (ModelState.IsValid)
             {
@@ -88,7 +106,7 @@ namespace To_Do_app.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,isCompleted")] Models.Task task)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Completion")] Models.Task task)
         {
             if (id != task.Id)
             {
